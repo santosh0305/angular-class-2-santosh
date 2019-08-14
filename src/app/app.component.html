@@ -1,0 +1,48 @@
+<hello name="{{ name }}"></hello>
+// Interpolation
+<p>
+  {{simpleVariable}}  
+ <br>
+  {{1+4}}
+ <br>
+  {{myFunc()}}
+</p>
+
+// Property Binding <br>
+Gender :
+Male : <input type="checkbox" [checked]=typeOfGender [disabled]=isCheckboxDisabled  (click)=chechBoxClick(1)>
+
+// Event Binding
+Others : <input type="checkbox" (click)=chechBoxClick($event) >
+
+Female : <input type="checkbox" (click)=chechBoxClick(3)>
+
+// <br>
+Age : <input type="text" #age (change)=getAge()>
+<div *ngIf="age.value.length<3" style="color:red">
+  Please enter age greater than 100
+</div>
+
+Email : <input type="text" #mail (change)=getEmail()>
+<br>
+
+{{mail.value}}
+
+// Directives
+<div *ngIf="doShowData">
+Ok I've read tens of similar questions but none have been able to fix my problem - mainly because I think my problem is a bit deeper.
+
+I have several modules working fine on my server (Nodejitsu) which I think I installed the same way which was: npm install express/connect/mongojs etc...
+</div>
+
+<div *ngIf="shouldIShowData()">
+  this is the data to show
+</div>
+
+// Using Loops 
+<div *ngFor="let number of getListOfAges();let i=index;">
+  {{i}} {{number}}
+  <div *ngIf="i%2">
+    show this if counter is event
+  </div>
+</div>
